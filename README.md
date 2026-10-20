@@ -53,6 +53,8 @@ again. Copy every module except `gamekit_demo`, which only lives here.
 - **Diginaat and DevKine**: EpicCameraX, which `gamekit_lens` is ported from (MIT, see
   `addons/gamekit_lens/LICENSE-EpicCameraX.txt`).
 - **Godot Engine contributors**: [Godot Engine](https://godotengine.org) (MIT).
+- **uno1982**: the [PhysX 5 module for Godot](https://github.com/uno1982/godot/tree/feature/physx5-module)
+  (`feature/physx5-module`), which brings PhysX into the engine build.
 - **NVIDIA**: PhysX, used by the engine build for physics and water.
 - **Valve**: the player's acceleration and friction are modelled on Source SDK 2013 `gamemovement.cpp`.
 - **Claude Code** (Anthropic's AI assistant): co-author of the code and docs, as noted in the commit messages.
