@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="WeatherPreset" format=3]
+
+[ext_resource type="Script" path="res://addons/gamekit_weather/scripts/WeatherPreset.cs" id="1"]
+
+[resource]
+script = ExtResource("1")
+DisplayName = "Partly Cloudy"
+CloudCoverage = 0.45
+CloudDensity = 0.85
+CloudDarkness = 0.05
+Overcast = 0.0
+RainIntensity = 0.0
+LightningPerMinute = 0.0
+WindSpeed = 4.0
+WindDirectionDegrees = 40.0
+Gustiness = 0.25
+FogDensity = 0.0
+DistanceFog = 0.0
+SunEnergyScale = 0.9
+SceneBrightness = 0.95

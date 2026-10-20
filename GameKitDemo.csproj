@@ -1,0 +1,9 @@
+<Project Sdk="Godot.NET.Sdk/4.8.0-dev">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <Nullable>enable</Nullable>
+    <LangVersion>12</LangVersion>
+    <RootNamespace>GameKitDemo</RootNamespace>
+  </PropertyGroup>
+</Project>

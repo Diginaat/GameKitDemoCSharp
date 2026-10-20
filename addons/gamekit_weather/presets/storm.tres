@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="WeatherPreset" format=3]
+
+[ext_resource type="Script" path="res://addons/gamekit_weather/scripts/WeatherPreset.cs" id="1"]
+
+[resource]
+script = ExtResource("1")
+DisplayName = "Storm"
+CloudCoverage = 1.0
+CloudDensity = 1.0
+CloudDarkness = 0.9
+Overcast = 0.92
+RainIntensity = 1.0
+LightningPerMinute = 0.0
+WindSpeed = 14.0
+WindDirectionDegrees = 70.0
+Gustiness = 0.7
+FogDensity = 0.03
+DistanceFog = 0.02
+SunEnergyScale = 0.06
+SceneBrightness = 0.42

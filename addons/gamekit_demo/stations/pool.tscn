@@ -1,0 +1,318 @@
+[gd_scene format=3]
+
+[ext_resource type="Shader" path="res://addons/gamekit_water/shaders/pool_tile.gdshader" id="1_r"]
+[ext_resource type="Material" path="res://addons/gamekit_demo/materials/wall_stone.tres" id="2_r"]
+[ext_resource type="Script" path="res://addons/gamekit_water/scripts/WaterVolume.cs" id="3_r"]
+[ext_resource type="Resource" path="res://addons/gamekit_water/resources/pool_reflection.tres" id="4_r"]
+[ext_resource type="Script" path="res://addons/gamekit_demo/scripts/PoolCaustics.cs" id="5_r"]
+[ext_resource type="Material" path="res://addons/gamekit_demo/materials/accent_red.tres" id="6_r"]
+[ext_resource type="Material" path="res://addons/gamekit_demo/materials/wood_dark.tres" id="7_r"]
+[ext_resource type="Material" path="res://addons/gamekit_demo/materials/sign_board.tres" id="8_r"]
+[ext_resource type="Material" path="res://addons/gamekit_demo/materials/accent_orange.tres" id="9_r"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("1_r")
+shader_parameter/water_surface_y = 2.0
+shader_parameter/water_rect = Vector4(-4, -6, 4, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2"]
+size = Vector3(9, 2.2, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3"]
+size = Vector3(9, 2.2, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4"]
+size = Vector3(9, 2.2, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5"]
+size = Vector3(9, 2.2, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6"]
+size = Vector3(0.5, 2.2, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7"]
+size = Vector3(0.5, 2.2, 8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8"]
+size = Vector3(0.5, 2.2, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_9"]
+size = Vector3(0.5, 2.2, 8)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_10"]
+size = Vector2(8, 8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_11"]
+size = Vector3(3, 0.3, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_12"]
+size = Vector3(3, 0.3, 0.6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_13"]
+size = Vector3(3, 0.6, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_14"]
+size = Vector3(3, 0.6, 0.6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_15"]
+size = Vector3(3, 0.9, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_16"]
+size = Vector3(3, 0.9, 0.6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_17"]
+size = Vector3(3, 1.2, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_18"]
+size = Vector3(3, 1.2, 0.6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_19"]
+size = Vector3(3, 1.5, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_20"]
+size = Vector3(3, 1.5, 0.6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_21"]
+size = Vector3(3, 1.8, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_22"]
+size = Vector3(3, 1.8, 0.6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_23"]
+size = Vector3(3, 2.1, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_24"]
+size = Vector3(3, 2.1, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_25"]
+size = Vector3(8, 2, 8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_26"]
+size = Vector3(0.6, 0.6, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_27"]
+size = Vector3(0.6, 0.6, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_28"]
+size = Vector3(3.4, 2.24856, 0.12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_29"]
+size = Vector3(0.1, 2.24856, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_30"]
+size = Vector3(0.1, 2.24856, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_31"]
+size = Vector3(3.4, 1.39856, 0.07)
+
+[sub_resource type="BoxMesh" id="BoxMesh_32"]
+size = Vector3(3.44, 0.06, 0.1)
+
+[node name="Pool" type="Node3D"]
+
+[node name="WallNorth" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -6.25)
+
+[node name="Shape" type="CollisionShape3D" parent="WallNorth"]
+shape = SubResource("BoxShape3D_3")
+
+[node name="Mesh" type="MeshInstance3D" parent="WallNorth"]
+mesh = SubResource("BoxMesh_2")
+surface_material_override/0 = SubResource("ShaderMaterial_1")
+
+[node name="WallSouth" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 2.25)
+
+[node name="Shape" type="CollisionShape3D" parent="WallSouth"]
+shape = SubResource("BoxShape3D_5")
+
+[node name="Mesh" type="MeshInstance3D" parent="WallSouth"]
+mesh = SubResource("BoxMesh_4")
+surface_material_override/0 = SubResource("ShaderMaterial_1")
+
+[node name="WallWest" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.25, 1.1, -2)
+
+[node name="Shape" type="CollisionShape3D" parent="WallWest"]
+shape = SubResource("BoxShape3D_7")
+
+[node name="Mesh" type="MeshInstance3D" parent="WallWest"]
+mesh = SubResource("BoxMesh_6")
+surface_material_override/0 = SubResource("ShaderMaterial_1")
+
+[node name="WallEast" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.25, 1.1, -2)
+
+[node name="Shape" type="CollisionShape3D" parent="WallEast"]
+shape = SubResource("BoxShape3D_9")
+
+[node name="Mesh" type="MeshInstance3D" parent="WallEast"]
+mesh = SubResource("BoxMesh_8")
+surface_material_override/0 = SubResource("ShaderMaterial_1")
+
+[node name="Tiles" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.004, -2)
+mesh = SubResource("PlaneMesh_10")
+surface_material_override/0 = SubResource("ShaderMaterial_1")
+
+[node name="Step1" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 6.4)
+metadata/surface = 1
+
+[node name="Shape" type="CollisionShape3D" parent="Step1"]
+shape = SubResource("BoxShape3D_12")
+
+[node name="Mesh" type="MeshInstance3D" parent="Step1"]
+mesh = SubResource("BoxMesh_11")
+surface_material_override/0 = ExtResource("2_r")
+
+[node name="Step2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 5.8)
+metadata/surface = 1
+
+[node name="Shape" type="CollisionShape3D" parent="Step2"]
+shape = SubResource("BoxShape3D_14")
+
+[node name="Mesh" type="MeshInstance3D" parent="Step2"]
+mesh = SubResource("BoxMesh_13")
+surface_material_override/0 = ExtResource("2_r")
+
+[node name="Step3" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 5.2)
+metadata/surface = 1
+
+[node name="Shape" type="CollisionShape3D" parent="Step3"]
+shape = SubResource("BoxShape3D_16")
+
+[node name="Mesh" type="MeshInstance3D" parent="Step3"]
+mesh = SubResource("BoxMesh_15")
+surface_material_override/0 = ExtResource("2_r")
+
+[node name="Step4" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 4.6)
+metadata/surface = 1
+
+[node name="Shape" type="CollisionShape3D" parent="Step4"]
+shape = SubResource("BoxShape3D_18")
+
+[node name="Mesh" type="MeshInstance3D" parent="Step4"]
+mesh = SubResource("BoxMesh_17")
+surface_material_override/0 = ExtResource("2_r")
+
+[node name="Step5" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 4)
+metadata/surface = 1
+
+[node name="Shape" type="CollisionShape3D" parent="Step5"]
+shape = SubResource("BoxShape3D_20")
+
+[node name="Mesh" type="MeshInstance3D" parent="Step5"]
+mesh = SubResource("BoxMesh_19")
+surface_material_override/0 = ExtResource("2_r")
+
+[node name="Step6" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 3.4)
+metadata/surface = 1
+
+[node name="Shape" type="CollisionShape3D" parent="Step6"]
+shape = SubResource("BoxShape3D_22")
+
+[node name="Mesh" type="MeshInstance3D" parent="Step6"]
+mesh = SubResource("BoxMesh_21")
+surface_material_override/0 = ExtResource("2_r")
+
+[node name="Step7" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05, 2.8)
+metadata/surface = 1
+
+[node name="Shape" type="CollisionShape3D" parent="Step7"]
+shape = SubResource("BoxShape3D_24")
+
+[node name="Mesh" type="MeshInstance3D" parent="Step7"]
+mesh = SubResource("BoxMesh_23")
+surface_material_override/0 = ExtResource("2_r")
+
+[node name="Water" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -2)
+collision_layer = 8
+collision_mask = 6
+monitorable = false
+script = ExtResource("3_r")
+Reflection = ExtResource("4_r")
+
+[node name="Shape" type="CollisionShape3D" parent="Water"]
+shape = SubResource("BoxShape3D_25")
+
+[node name="Caustics" type="Node" parent="." node_paths=PackedStringArray("Water")]
+script = ExtResource("5_r")
+Water = NodePath("../Water")
+TileMaterial = SubResource("ShaderMaterial_1")
+
+[node name="Ball" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 2.6, -3)
+collision_layer = 4
+collision_mask = 7
+mass = 5.0
+
+[node name="Shape" type="CollisionShape3D" parent="Ball"]
+shape = SubResource("BoxShape3D_27")
+
+[node name="Mesh" type="MeshInstance3D" parent="Ball"]
+mesh = SubResource("BoxMesh_26")
+surface_material_override/0 = ExtResource("6_r")
+
+[node name="Sign" type="StaticBody3D" parent="."]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 3.6, 0, 7.2)
+
+[node name="Shape" type="CollisionShape3D" parent="Sign"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12428, 0)
+shape = SubResource("BoxShape3D_28")
+
+[node name="Post1" type="MeshInstance3D" parent="Sign"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.12428, -0.07)
+mesh = SubResource("BoxMesh_29")
+surface_material_override/0 = ExtResource("7_r")
+
+[node name="Post2" type="MeshInstance3D" parent="Sign"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1.12428, -0.07)
+mesh = SubResource("BoxMesh_30")
+surface_material_override/0 = ExtResource("7_r")
+
+[node name="Board" type="MeshInstance3D" parent="Sign"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54928, 0)
+mesh = SubResource("BoxMesh_31")
+surface_material_override/0 = ExtResource("8_r")
+
+[node name="Trim" type="MeshInstance3D" parent="Sign"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.27856, 0)
+mesh = SubResource("BoxMesh_32")
+surface_material_override/0 = ExtResource("9_r")
+
+[node name="Title" type="Label3D" parent="Sign"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.52, 2.12856, 0.04)
+pixel_size = 0.0032
+double_sided = false
+modulate = Color(1, 0.72, 0.38, 1)
+outline_size = 0
+font_size = 54
+text = "8 · Water"
+width = 950.0
+autowrap_mode = 3
+horizontal_alignment = 0
+vertical_alignment = 0
+
+[node name="Text" type="Label3D" parent="Sign"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.52, 1.90856, 0.04)
+pixel_size = 0.0032
+double_sided = false
+modulate = Color(0.92, 0.93, 0.95, 1)
+outline_size = 0
+font_size = 36
+text = "Area3D + WaterVolume with one BoxShape3D: the top of the box is the surface. Layer Triggers (4), mask Player + Props.
+It builds its own surface, underwater view and reflection. Swim: Space up, Ctrl down; Space + W climbs out."
+width = 950.0
+autowrap_mode = 3
+horizontal_alignment = 0
+vertical_alignment = 0

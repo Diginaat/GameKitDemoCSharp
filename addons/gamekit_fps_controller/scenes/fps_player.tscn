@@ -1,0 +1,79 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://addons/gamekit_fps_controller/scripts/FpsPlayerController.cs" id="1_ctrl"]
+[ext_resource type="Resource" path="res://addons/gamekit_fps_controller/resources/modern_aaa.tres" id="2_move"]
+[ext_resource type="Resource" path="res://addons/gamekit_fps_controller/resources/camera_modern.tres" id="3_cam"]
+[ext_resource type="Script" path="res://addons/gamekit_fps_controller/scripts/PlayerInput.cs" id="4_input"]
+[ext_resource type="Script" path="res://addons/gamekit_fps_controller/scripts/PlayerCameraController.cs" id="5_rig"]
+[ext_resource type="Script" path="res://addons/gamekit_fps_controller/scripts/PlayerCameraEffects.cs" id="6_fx"]
+[ext_resource type="Script" path="res://addons/gamekit_interaction/scripts/InteractionRay.cs" id="9_interact"]
+[ext_resource type="Script" path="res://addons/gamekit_fps_controller/scripts/PlayerFootsteps.cs" id="10_steps"]
+[ext_resource type="Script" path="res://addons/gamekit_fps_controller/scripts/movement/MantleMovement.cs" id="11_mantle"]
+[ext_resource type="Script" path="res://addons/gamekit_fps_controller/scripts/movement/SwimMovement.cs" id="12_swim"]
+[ext_resource type="Script" path="res://addons/gamekit_fps_controller/scripts/movement/LadderMovement.cs" id="13_ladder"]
+[ext_resource type="Script" path="res://addons/gamekit_fps_controller/scripts/movement/SlideMovement.cs" id="14_slide"]
+[ext_resource type="Script" path="res://addons/gamekit_lens/scripts/CameraLens.cs" id="15_lens"]
+[ext_resource type="Resource" path="res://addons/gamekit_lens/profiles/natural.tres" id="16_lens_profile"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_body"]
+radius = 0.4
+height = 1.83
+
+[node name="FpsPlayer" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_ctrl")
+Movement = ExtResource("2_move")
+CameraSettings = ExtResource("3_cam")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.915, 0)
+shape = SubResource("CapsuleShape3D_body")
+
+[node name="GroundCheck" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+enabled = false
+target_position = Vector3(0, -0.35, 0)
+collision_mask = 5
+
+[node name="Abilities" type="Node" parent="."]
+
+[node name="Mantle" type="Node" parent="Abilities"]
+script = ExtResource("11_mantle")
+
+[node name="Swim" type="Node" parent="Abilities"]
+script = ExtResource("12_swim")
+
+[node name="Ladder" type="Node" parent="Abilities"]
+script = ExtResource("13_ladder")
+
+[node name="Slide" type="Node" parent="Abilities"]
+script = ExtResource("14_slide")
+
+[node name="Input" type="Node" parent="."]
+script = ExtResource("4_input")
+
+[node name="Interaction" type="Node" parent="."]
+script = ExtResource("9_interact")
+
+[node name="Footsteps" type="Node" parent="."]
+script = ExtResource("10_steps")
+
+[node name="CameraRig" type="Node3D" parent="."]
+top_level = true
+script = ExtResource("5_rig")
+
+[node name="Pitch" type="Node3D" parent="CameraRig"]
+
+[node name="Effects" type="Node3D" parent="CameraRig/Pitch"]
+script = ExtResource("6_fx")
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig/Pitch/Effects"]
+current = true
+fov = 72.0
+near = 0.03
+far = 500.0
+
+[node name="Lens" type="Node3D" parent="CameraRig/Pitch/Effects/Camera3D"]
+script = ExtResource("15_lens")
+Profile = ExtResource("16_lens_profile")

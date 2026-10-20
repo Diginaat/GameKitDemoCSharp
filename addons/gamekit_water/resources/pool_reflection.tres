@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PlanarReflectionSettings" format=3 uid="uid://c0xpkj6bseeqb"]
+
+[ext_resource type="Script" uid="uid://ba40osmbtsas1" path="res://addons/gamekit_water/scripts/PlanarReflectionSettings.cs" id="1"]
+
+[resource]
+script = ExtResource("1")
+Strength = 0.2
+Distortion = 0.04
+EdgeFade = 0.05
+FogDensity = 0.2

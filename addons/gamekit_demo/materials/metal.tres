@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3]
+
+[ext_resource type="Shader" path="res://addons/gamekit_demo/shaders/demo_surface.gdshader" id="1_shader"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_shader")
+shader_parameter/surface_color = Color(0.56, 0.59, 0.63, 1)
+shader_parameter/surface_pattern = 1
+shader_parameter/surface_scale = 0.5
+shader_parameter/surface_gap = 0.012
+shader_parameter/surface_gap_color = Color(0.25, 0.26, 0.28, 1)
+shader_parameter/surface_variation = 0.06
+shader_parameter/surface_roughness = 0.38
+shader_parameter/surface_metallic = 0.85
+shader_parameter/surface_receive_weather = true
+shader_parameter/surface_porosity = 0.3

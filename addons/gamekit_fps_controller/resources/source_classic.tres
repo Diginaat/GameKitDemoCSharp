@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="PlayerMovementSettings" format=3]
+
+[ext_resource type="Script" path="res://addons/gamekit_fps_controller/scripts/PlayerMovementSettings.cs" id="1"]
+
+; Half-Life 2 values converted at 1 unit = 1 inch (0.0254 m).
+[resource]
+script = ExtResource("1")
+ProfileName = "Source Classic"
+Radius = 0.41
+StandingHeight = 1.83
+CrouchHeight = 0.91
+StandingEyeHeight = 1.63
+CrouchEyeHeight = 0.71
+WalkSpeed = 3.81
+RunSpeed = 4.83
+SprintSpeed = 8.13
+CrouchSpeed = 1.61
+GroundAcceleration = 10.0
+Friction = 4.0
+StopSpeed = 2.54
+Gravity = 15.24
+AirAcceleration = 10.0
+AirSpeedCap = 0.76
+MaxFallSpeed = 88.9
+JumpHeight = 0.55
+VariableJumpHeight = false
+JumpCutMultiplier = 1.0
+JumpBufferTime = 0.0
+CoyoteTime = 0.0
+AllowBunnyHop = true
+AutoBunnyHop = false
+BunnyHopSpeedCap = 1.1
+SprintMinForwardInput = -1.0
+StepHeight = 0.457
+MaxSlopeDegrees = 45.57
+SlideEnabled = false
+MantleEnabled = false

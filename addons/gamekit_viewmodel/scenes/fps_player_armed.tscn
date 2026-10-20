@@ -1,0 +1,24 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://addons/gamekit_fps_controller/scenes/fps_player.tscn" id="1_player"]
+[ext_resource type="Script" path="res://addons/gamekit_viewmodel/scripts/PlayerViewmodel.cs" id="2_vm"]
+[ext_resource type="Script" path="res://addons/gamekit_viewmodel/scripts/Weapon.cs" id="3_weapon"]
+
+[node name="FpsPlayer" instance=ExtResource("1_player")]
+
+[node name="Viewmodel" type="Node3D" parent="CameraRig/Pitch/Effects/Camera3D"]
+script = ExtResource("2_vm")
+
+[node name="Rifle" type="Node3D" parent="CameraRig/Pitch/Effects/Camera3D/Viewmodel"]
+script = ExtResource("3_weapon")
+
+[node name="Pistol" type="Node3D" parent="CameraRig/Pitch/Effects/Camera3D/Viewmodel"]
+script = ExtResource("3_weapon")
+DisplayName = "Pistol"
+Automatic = false
+FireInterval = 0.18
+MagazineSize = 12
+HitImpulse = 4.0
+RecoilDegrees = Vector2(1.4, 0.25)
+PlaceholderColor = Color(0.12, 0.12, 0.13, 1)
+PlaceholderSize = Vector3(0.04, 0.08, 0.2)

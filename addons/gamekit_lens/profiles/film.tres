@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="LensProfile" format=3]
+
+[ext_resource type="Script" path="res://addons/gamekit_lens/scripts/LensProfile.cs" id="1"]
+
+[resource]
+script = ExtResource("1")
+DisplayName = "Film"
+VignetteIntensity = 0.35
+VignetteSize = 0.85
+ChromaticAberration = 2.2
+DistortionEnabled = true
+Distortion = 0.02
+DofEnabled = true
+DofAmount = 0.6
+DofFarDistance = 40.0
+DofFarTransition = 40.0
+HalationIntensity = 1.0
+HalationThreshold = 0.9
+HalationRadius = 3.5
+RgbSensorNoise = false
+GrainStrength = 0.03
+GrainSize = 1.8
+GrainShadows = 1.4
+GrainMids = 1.2
+GrainHighlights = 0.6
+Contrast = 1.1
+Saturation = 0.9
+Temperature = 0.08
+FlareIntensity = 0.45
