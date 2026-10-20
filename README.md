@@ -45,3 +45,14 @@ copy `addons/gamekit_*`, merge four `project.godot` sections, build, and open th
 
 The modules here are a copy. After changing them in `GameClient`, copy the `addons/gamekit_*` folders
 again. Copy every module except `gamekit_demo`, which only lives here.
+
+## Credits
+
+- **Diginaat**: GameKit modules and this demo project.
+- **Diginaat**: the [Godot NVIDIA + PhysX engine](https://github.com/Diginaat/godot) this project runs on.
+- **Diginaat and DevKine**: EpicCameraX, which `gamekit_lens` is ported from (MIT, see
+  `addons/gamekit_lens/LICENSE-EpicCameraX.txt`).
+- **Godot Engine contributors**: [Godot Engine](https://godotengine.org) (MIT).
+- **NVIDIA**: PhysX, used by the engine build for physics and water.
+- **Valve**: the player's acceleration and friction are modelled on Source SDK 2013 `gamemovement.cpp`.
+- **Claude Code** (Anthropic's AI assistant): co-author of the code and docs, as noted in the commit messages.
