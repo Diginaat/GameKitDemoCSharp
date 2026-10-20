@@ -12,15 +12,22 @@ through it, read the signs, and copy any part into your own game.
 
 ## Run it
 
-1. Open this folder with the PhysX Godot editor (`GodotEnginePhysx`, 4.8 mono). The water module
-   needs this engine.
-2. Press **Build**, then **F5**. The main scene is `addons/gamekit_demo/scenes/gamekit_demo.tscn`.
+1. Download the engine: the **mono** editor from the
+   [latest Godot NVIDIA + PhysX release](https://github.com/Diginaat/godot/releases/latest)
+   (`godot_4.8-nvidia-rt-dlss-physx_<version>-editor_windows_amd64_mono.zip`). This demo was made with
+   [v0.7.3](https://github.com/Diginaat/godot/releases/tag/godot4.8-dev-nvidia-rt-dlss-physx-v0.7.3).
+   You need the mono (C#) build, and the water module needs its PhysX engine. Stock Godot will not work.
+2. Unzip it, start the editor, and import this folder (`project.godot`).
+3. Press **Build**, then **F5**. The main scene is `addons/gamekit_demo/scenes/gamekit_demo.tscn`.
 
-From a terminal:
+For exported games, install the matching `export_templates_windows_amd64_mono.tpz` from the same
+release (Editor > Manage Export Templates > Install from File).
+
+From a terminal, with the editor unzipped next to this folder:
 
 ```
 dotnet build
-..\GodotEnginePhysx\godot.windows.editor.x86_64.mono.exe --path .
+<path-to-editor>\godot.windows.editor.x86_64.mono.exe --path .
 ```
 
 ## What is inside
